@@ -5,40 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucabohn <lucabohn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 23:25:16 by lbohm             #+#    #+#             */
-/*   Updated: 2025/01/18 22:57:25 by lucabohn         ###   ########.fr       */
+/*   Created: 2025/01/13 20:37:33 by lucabohn          #+#    #+#             */
+/*   Updated: 2025/01/19 14:56:57 by lucabohn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Span.hpp"
 #include <iostream>
-#include <vector>
-#include <list>
-#include "easyfind.hpp"
 
-int	main(void)
+int main()
 {
-	std::vector<int>			nbrs;
-	std::list<int>				list;
 
-	for (int i = 0; i < 10; i++)
-		nbrs.push_back(i);
-	for (int i = 0; i < 10; i++)
-		list.push_back(i);
 	try
 	{
-		std::cout << *easyfind(nbrs, 4) << std::endl;
+		Span sp = Span(51);
+		std::vector<int>	test;
+
+		for (int i = 0; i < 50; i++)
+			test.push_back(i);
+		sp.addNumber(test.begin(), test.end());
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		std::cout << *easyfind(list, 9) << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	return (0);
 }
