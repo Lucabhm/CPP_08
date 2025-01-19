@@ -6,7 +6,7 @@
 /*   By: lucabohn <lucabohn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 20:24:43 by lucabohn          #+#    #+#             */
-/*   Updated: 2025/01/18 23:27:38 by lucabohn         ###   ########.fr       */
+/*   Updated: 2025/01/19 18:25:50 by lucabohn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Span
 		template <typename T>
 		void	addNumber(T start, T end)
 		{
-			if (this->list.size() >= this->max || this->list.size() + std::distance(start, end) >= this->max)
+			if (this->list.size() > this->max || this->list.size() + std::distance(start, end) > this->max)
 				throw std::runtime_error("list if full");
 			this->list.insert(start, end);
 		}
