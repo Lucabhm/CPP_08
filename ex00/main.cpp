@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucabohn <lucabohn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 23:25:16 by lbohm             #+#    #+#             */
-/*   Updated: 2025/01/18 22:57:25 by lucabohn         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:18:32 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
 #include <list>
+#include <map>
 #include "easyfind.hpp"
 
 int	main(void)
@@ -26,11 +27,11 @@ int	main(void)
 		list.push_back(i);
 	try
 	{
-		std::cout << *easyfind(nbrs, 4) << std::endl;
+		std::cout << *easyfind(nbrs, 2) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
@@ -38,7 +39,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	return (0);
 }

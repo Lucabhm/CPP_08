@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucabohn <lucabohn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 20:24:43 by lucabohn          #+#    #+#             */
-/*   Updated: 2025/01/19 18:25:50 by lucabohn         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:37:04 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ class Span
 		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);
 };
-
 
 #endif
