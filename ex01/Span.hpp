@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lucabohn <lucabohn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 20:24:43 by lucabohn          #+#    #+#             */
-/*   Updated: 2025/02/10 13:37:04 by lbohm            ###   ########.fr       */
+/*   Updated: 2025/02/10 20:40:47 by lucabohn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <set>
 # include <algorithm>
+# include <iostream>
 
 class Span
 {
@@ -31,7 +32,7 @@ class Span
 		template <typename T>
 		void	addNumber(T start, T end)
 		{
-			if (this->list.size() > this->max || this->list.size() + std::distance(start, end) > this->max)
+			if (this->list.size() >= this->max || this->list.size() + std::distance(start, end) > this->max)
 				throw std::runtime_error("list if full");
 			this->list.insert(start, end);
 		}

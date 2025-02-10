@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lucabohn <lucabohn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 20:37:33 by lucabohn          #+#    #+#             */
-/*   Updated: 2025/02/10 13:57:25 by lbohm            ###   ########.fr       */
+/*   Updated: 2025/02/10 20:36:46 by lucabohn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Span.hpp"
 #include <list>
-#include <time.h>
-#include <random>
+#include <ctime>
+#include <cstdlib>
 
 int main()
 {
 	srand(static_cast<unsigned int>(time(NULL)));
 	Span			sp = Span(5);
-	Span			sp2 = Span(10000);
+	Span			sp2 = Span(20000);
 	std::list<int>	list;
 	std::list<int>::iterator	first;
 	std::list<int>::iterator	last;
 
-	for (int i = 0; i < 20000; i++)
+	for (int i = 0; i <= 20000; i++)
 		list.push_back(rand());
 	try
 	{
