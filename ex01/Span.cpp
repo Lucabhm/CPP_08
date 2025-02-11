@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 20:24:51 by lucabohn          #+#    #+#             */
-/*   Updated: 2025/02/10 13:36:55 by lbohm            ###   ########.fr       */
+/*   Updated: 2025/02/11 12:29:26 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,18 @@ unsigned int	Span::shortestSpan(void)
 {
 	std::multiset<int>::iterator	first;
 	std::multiset<int>::iterator	second;
-	unsigned int					span;
+	int					span;
 
 	if (this->list.size() < 2)
 		throw std::runtime_error("no span can be found");
 	first = this->list.begin();
 	second = this->list.begin();
 	second++;
-	span = *second - *first;
+	span = std::abs(*second - *first);
 	while (second != this->list.end())
 	{
-		if (*second - *first < span)
-			span = *second - *first;
+		if (std::abs(*second - *first) < span)
+			span = std::abs(*second - *first);
 		first++;
 		second++;
 	}
@@ -74,5 +74,5 @@ unsigned int	Span::longestSpan(void)
 {
 	if (this->list.size() < 2)
 		throw std::runtime_error("no span can be found");
-	return (*this->list.rbegin() - *this->list.begin());
+	return (std::abs(*this->list.rbegin() - *this->list.begin()));
 }
