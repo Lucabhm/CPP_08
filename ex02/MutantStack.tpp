@@ -6,7 +6,7 @@
 /*   By: lucabohn <lucabohn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:40:10 by lbohm             #+#    #+#             */
-/*   Updated: 2025/02/10 23:28:32 by lucabohn         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:31:50 by lucabohn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@ template <typename T>
 MutantStack<T>::MutantStack(void) {}
 
 template <typename T>
-MutantStack<T>::MutantStack(const MutantStack &cpy) {}
+MutantStack<T>::MutantStack(const MutantStack &cpy) : std::stack<T>(cpy) {}
 
 template <typename T>
-MutantStack<T>	&MutantStack<T>::operator= (const MutantStack &cpy) {}
+MutantStack<T>	&MutantStack<T>::operator= (const MutantStack &cpy)
+{
+	if (this != &cpy)
+		std::stack<T>::operator=(cpy);
+	return (*this);
+}
 
 template <typename T>
 MutantStack<T>::~MutantStack(void) {}
